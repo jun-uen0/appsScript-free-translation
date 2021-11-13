@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>翻訳アプリ</title>
+    <title>Free Google Translate Web API</title> 
 </head>
 
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(async function () {
-            const url = 'https://script.google.com/macros/s/AKfycbz4kOF9KfWw8x60FKeV7PDfR5JF07JnzukcKpXTDzjCp2gFUtSeaLxZUQhD3jQrKQN0Yg/exec';
-            const text = "こんにちは";
-            const source = "ja";
-            const target = "en";
+            const url = 'https://script.google.com/macros/s/<YOUR WEB API KEY>/exec';
+            const text = "Hello";
+            const source = "en";
+            const target = "ja";
             const res = await fetch(url + "?text=" + text + "&source=" + source + "&target=" + target);
             const translate = await res.json();
             console.log(translate.text);
